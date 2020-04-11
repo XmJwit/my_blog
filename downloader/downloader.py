@@ -41,7 +41,7 @@ class downloader:
         self.fd.write(res.content)
     def run(self):
         # 打开文件，文件对象存在self里
-        self.fd =  open(self.name,'w')
+        self.fd =  open(self.name,'wb') # 文件打开方式在Windows上有问题，把之前的打开语句'w'修改为用二进制方式打开'wb'就没有问题
         thread_list = []
 
         n = 0
